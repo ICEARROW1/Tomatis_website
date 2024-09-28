@@ -5,37 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <title>Метод Томатиса | RULISTEN | АСТАНА</title>
-    <style>
-        /* Стили для модального окна */
-        .modal {
-            display: none; /* Скрыто по умолчанию */
-            position: fixed; /* Остается на месте */
-            z-index: 1000; /* Слой сверху */
-            left: 0;
-            top: 0;
-            width: 100%; /* Полная ширина */
-            height: 100%; /* Полная высота */
-            overflow: auto; /* Прокрутка если нужно */
-            background-color: rgba(0, 0, 0, 0.8); /* Полупрозрачный фон */
-        }
-
-        .modal-content {
-            margin: auto;
-            display: block;
-            width: 80%; /* Ширина модального окна */
-            max-width: 700px; /* Максимальная ширина */
-        }
-
-        .close {
-            position: absolute;
-            top: 15px;
-            right: 35px;
-            color: white;
-            font-size: 40px;
-            font-weight: bold;
-            cursor: pointer;
-        }
-    </style>
 </head>
 <body>
     <header>
@@ -88,10 +57,11 @@
                 Дети с радостью приходят на сеансы Forbrain. Они воспринимают процесс как игру и с неподдельным интересом слушают свой голос. А с микрофоном в руках можно ощутить себя настоящей звездочкой
                 Forbrain так называется аппарат, работа которого основана на механизме передачи воздушной и костной проводимости. В процессе сеанса создается некий эффект дополнительной аудио- вокальной связи.
                 По сути, это наушники с микрофоном, и специальными датчиками. Особенностью можно назвать то, что гарнитура копирует и усиливает голос во время говорения ребенка. Если у ребенка еще нет речи, может говорить взрослый. Таким образом звуковой сигнал проходит через костный слух.
-            </p>  
+            </p>
             <p>
                 Результаты этой методики довольно высоки:               
-            <p>
+            </p>
+            <p> 
                 📌Улучшается произношение звуков, беглость и плавность речи, громкость и ритм.   
             </p>            
             <p> 
@@ -112,7 +82,7 @@
             <h2>Наши специалисты</h2>
             <h3 class="specialist-name">Алина Смагулова</h3>
             <div class="specialist-photo">
-                <img src="images/WhatsApp Image 2024-09-28 at 16.42.47.png" alt="Алина Смагулова" />
+                <img src="images/alina_smagulova.jpg" alt="Алина Смагулова" />
             </div>
             <p class="specialist-info">
                 Смагулова Алина Нурлановна - дефектолог, томатис-терапевт. 
@@ -125,10 +95,10 @@
         <section class="gallery">
             <h2>Галерея</h2>
             <div class="images">
-                <img src="images/tomatis.fenomen_1727518734400.png" alt="Tomatis Image 1" class="gallery-image" />
-                <img src="images/tomatis.fenomen_1727518734400 (1).png" alt="Tomatis Image 2" class="gallery-image" />
-                <img src="images/tomatis.fenomen_1727525527168.png" alt="Tomatis Image 3" class="gallery-image" />
-                <img src="images/tomatis.fenomen_1727525571426.png" alt="Tomatis Image 4" class="gallery-image" />
+                <img class="gallery-image" src="images/tomatis.fenomen_1727518734400.png" alt="Tomatis Image 1" />
+                <img class="gallery-image" src="images/tomatis.fenomen_1727518734400 (1).png" alt="Tomatis Image 2" />
+                <img class="gallery-image" src="images/tomatis.fenomen_1727525527168.jpeg" alt="Tomatis Image 3" />
+                <img class="gallery-image" src="images/tomatis.fenomen_1727525571426.jpeg" alt="Tomatis Image 4" />
             </div>
         </section>
 
@@ -147,47 +117,19 @@
             <p>Телефон: 8 777 985 70 61</p>
             <p>Email: Smagulovaalina@mail.ru</p>
         </section>
+
+        <!-- Модальное окно -->
+        <div id="myModal" class="modal">
+            <span class="close">&times;</span>
+            <img class="modal-content" id="img01">
+            <div id="caption"></div>
+        </div>
     </main>
 
     <footer>
         <p>&copy; 2024 Tomatis. Все права защищены.</p>
     </footer>
 
-    <!-- Модальное окно -->
-    <div id="myModal" class="modal">
-        <span class="close">&times;</span>
-        <img class="modal-content" id="img01">
-        <div id="caption"></div>
-    </div>
-
-    <script>
-        // Получаем элементы модального окна
-        var modal = document.getElementById("myModal");
-        var img = document.getElementsByClassName("gallery-image");
-        var modalImg = document.getElementById("img01");
-        var captionText = document.getElementById("caption");
-
-        // Добавляем обработчик события к каждому изображению
-        for (let i = 0; i < img.length; i++) {
-            img[i].onclick = function() {
-                modal.style.display = "block";
-                modalImg.src = this.src;
-                captionText.innerHTML = this.alt;
-            }
-        }
-
-        // Закрываем модальное окно при нажатии на "x"
-        var span = document.getElementsByClassName("close")[0];
-        span.onclick = function() { 
-            modal.style.display = "none";
-        }
-
-        // Закрываем модальное окно при нажатии вне его
-        window.onclick = function(event) {
-            if (event.target == modal) {
-                modal.style.display = "none";
-            }
-        }
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
